@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Idol Loyalty Result</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Your Idol Loyalty Level ✨</h2>
+    <p id="result"></p>
+    <button onclick="goHome()">Return to Home 🏠</button>
+  </div>
+
+  <script>
+    function calculateLoyalty() {
+      const total =
+        Number(localStorage.getItem('q1') || 0) +
+        Number(localStorage.getItem('q2') || 0);
+
+      let message = '';
+      if (total >= 5) {
+        message = "💖 Ultimate Bias Defender: You're ride-or-die for your idol!";
+      } else if (total >= 3) {
+        message = "🌸 Loyal Lightstick Holder: You're supportive but balanced.";
+      } else {
+        message = "🌙 Casual Listener: You love them... just from a distance.";
+      }
+
+      document.getElementById('result').innerText = message;
+    }
+
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+
+    calculateLoyalty();
+  </script>
+</body>
+</html>
