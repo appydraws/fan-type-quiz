@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 6</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Scenario 6:</h2>
+    <p>You’re in a group chat where people are spreading rumors about your idol. What do you do?</p>
+    <button onclick="saveAnswer(3)">Step in, correct misinformation, and defend</button>
+    <button onclick="saveAnswer(2)">Mute the chat but stay in the fandom spaces</button>
+    <button onclick="saveAnswer(1)">Leave the chat and avoid the negativity</button>
+  </div>
+
+  <script>
+    function saveAnswer(score) {
+      localStorage.setItem('q6', score);
+      window.location.href = 'q7.html';
+    }
+  </script>
+</body>
+</html>
