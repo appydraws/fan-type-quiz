@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question 5</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Scenario 5:</h2>
+    <p>A fan-edit challenge for your idol trends online. How do you participate?</p>
+    <button onclick="saveAnswer(3)">Make and post your own edit or fanart</button>
+    <button onclick="saveAnswer(2)">Like and share others’ work</button>
+    <button onclick="saveAnswer(1)">Just watch a few edits for fun</button>
+  </div>
+
+  <script>
+    function saveAnswer(score) {
+      localStorage.setItem('q5', score);
+      window.location.href = 'q6.html';
+    }
+  </script>
+</body>
+</html>
