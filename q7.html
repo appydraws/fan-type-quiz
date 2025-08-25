@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 7</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Scenario 7:</h2>
+    <p>The encore stage ends and the idols wave goodbye. What’s your reaction?</p>
+    <button onclick="saveAnswer(3)">Cheer until the lights go out and post a long fan letter</button>
+    <button onclick="saveAnswer(2)">Clap and share a highlight clip afterward</button>
+    <button onclick="saveAnswer(1)">Head out early to beat the crowd</button>
+  </div>
+
+  <script>
+    function saveAnswer(score) {
+      localStorage.setItem('q7', score);
+      window.location.href = 'results.html';
+    }
+  </script>
+</body>
+</html>
