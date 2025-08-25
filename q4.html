@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question 4</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Scenario 4:</h2>
+    <p>Your group just dropped new merch. It sells out fast. What’s your move?</p>
+    <button onclick="saveAnswer(3)">Stay up at midnight and grab everything you can afford</button>
+    <button onclick="saveAnswer(2)">Pick one or two items that catch your eye</button>
+    <button onclick="saveAnswer(1)">Skip buying — you’re fine with digital support</button>
+  </div>
+
+  <script>
+    function saveAnswer(score) {
+      localStorage.setItem('q4', score);
+      window.location.href = 'q5.html';
+    }
+  </script>
+</body>
+</html>
