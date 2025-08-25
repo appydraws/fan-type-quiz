@@ -15,17 +15,25 @@
 
   <script>
     function calculateLoyalty() {
-      const total =
-        Number(localStorage.getItem('q1') || 0) +
-        Number(localStorage.getItem('q2') || 0);
+      const q1 = Number(localStorage.getItem('q1') || 0);
+      const q2 = Number(localStorage.getItem('q2') || 0);
+      const q3 = Number(localStorage.getItem('q3') || 0);
+      const q4 = Number(localStorage.getItem('q4') || 0);
+      const q5 = Number(localStorage.getItem('q5') || 0);
+      const q6 = Number(localStorage.getItem('q6') || 0);
+      const q7 = Number(localStorage.getItem('q7') || 0);
+
+      const totalScore = q1 + q2 + q3 + q4 + q5 + q6 + q7;
 
       let message = '';
-      if (total >= 5) {
-        message = "💖 Ultimate Bias Defender: You're ride-or-die for your idol!";
-      } else if (total >= 3) {
-        message = "🌸 Loyal Lightstick Holder: You're supportive but balanced.";
+      if (totalScore >= 18) {
+        message = "Ultimate Bias Defender: Your loyalty to your idol is unwavering and complete. You're fully immersed in the fandom, staying up-to-date with every piece of news, streaming their music on repeat, and defending them against any negativity. You're the kind of fan who understands the depth of their artistry and supports them in every phase of their career, celebrating their successes as if they were your own. Your dedication is a core part of your identity as a fan.";
+      } else if (totalScore >= 14) {
+        message = "Loyal Lightstick Holder: You are a dedicated and active supporter who strikes a great balance. You follow your idol's work closely, buying albums, attending concerts when you can, and engaging with their content online. While you are deeply invested, you also maintain a healthy perspective. Your support is genuine and consistent, showing that you are a reliable and valued part of the fandom without the all-consuming passion of the 'Ultimate Bias Defender.'";
+      } else if (totalScore >= 10) {
+        message = "Dedicated Supporter: You actively follow your idol's career and enjoy their content, but your interest is more focused on their artistic output than the full fandom experience. You might not attend every event or own extensive merchandise, but you make sure to listen to their new music and watch their performances. Your support is consistent and driven by a genuine appreciation for their talent, making you a strong, reliable fan from a bit of a distance.";
       } else {
-        message = "🌙 Casual Listener: You love them... just from a distance.";
+        message = "Casual Listener: You enjoy your idol's music and might follow their activities on occasion, but your interest is more laid-back. Your love for them is a bit more relaxed, and you're not in the fandom trenches. You are a fan from a distance, enjoying their art without the pressure of keeping up with every detail. Your support is easygoing and based on pure enjoyment.";
       }
 
       document.getElementById('result').innerText = message;
@@ -36,6 +44,6 @@
     }
 
     calculateLoyalty();
-  </script>
+</script>
 </body>
 </html>
